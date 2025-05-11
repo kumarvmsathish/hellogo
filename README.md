@@ -13,9 +13,41 @@ This Project is about setting up local development with Golang and basic learnin
   Run command to setup  
 
   ```bash
-  go mod init github.com/kumarvmsathish/hellogo # {hostname}/{username}/{projectname}
+        go mod init github.com/kumarvmsathish/hellogo # {remote}/{username}/{projectname}
   ```  
 
-  
+### Run and build
+  To run the application use command,
+  ```bash
+        go run main.go # run using file name - suitable for single files
+        # or
+        go run . # compiles all .go files
+        # or
+        go run my/cmd # single know package
+        # or
+        ./hellogo # use only after generating build using eg: `go build` command execution
+
+  ```
+
+  Go help run `go help run ` -- provides help commands for run
+
+  Go build - it makes production ready build
+  ```bash
+        go build # builds package of the current directory and generates binary executable file
+        # hellogo -- will be created as executable file
+
+        go build && ./hellogo # compile the build file and run
+  ```
+
+  Go Install -- helpful for local executables to run directly
+  ```bash
+        go install # builds and installed the `hellogo` program globally in local machine and no need to run `go build` before -- not req
+        cd ../ # navigate to check and run `hellogo` directly instead of using ./hellogo 
+        hellogo
+  ```
+
+
+
+
 
   
