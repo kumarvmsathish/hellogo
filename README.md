@@ -45,6 +45,33 @@ This Project is about setting up local development with Golang and basic learnin
         cd ../ # navigate to check and run `hellogo` directly instead of using ./hellogo 
         hellogo
   ```
+## Module and add Dependency
+    Create modules using,
+  ```bash
+        cd ../ # go to parent directory -- we are creating new module separately
+        # run below command for creating library/module
+        mkdir mystrings
+        cd mystrings
+        go mod init github.com/kumarvmsathish/mystrings
+
+  ```
+
+      Accessing local module as remote module,
+      Go to `go.mod` file and add below,
+``` bash
+      go.mod
+
+      replace github.com/kumarvmsathish/mystrings v0.0.0 => ../mystrings
+      require (
+            github.com/kumarvmsathish/mystrings v0.0.0 
+      )
+
+```
+
+      Import or download modules,
+```bash
+      go get github.com/wagslane/go-tinytime # downloads and installs in local machine
+```
 
 
 
